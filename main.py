@@ -23,7 +23,7 @@ class MainWindow(QMainWindow):
         about = QAction("About", self)
         help_menu_item.addAction(about)
         about.setMenuRole(QAction.MenuRole.NoRole)
-        about.triggered.connnect(self.about)
+        about.triggered.connect(self.about)
 
         search = QAction(QIcon("icons/search.png"), "Search", self)
         edit_menu_item.addAction(search)
@@ -45,7 +45,7 @@ class MainWindow(QMainWindow):
 
         # Status bar and adding status bar elements
         self.statusbar = QStatusBar()
-        self.setStatusBar(self.tatusbar)
+        self.setStatusBar(self.statusbar)
 
         # Detect a cell click
         self.table.cellClicked.connect(self.cell_clicked)
@@ -100,7 +100,7 @@ class MainWindow(QMainWindow):
 
 class AboutDialog(QMessageBox):
     def __init__(self):
-        super().__int__()
+        super().__init__()
         self.setWindowTitle("About")
         content = """
         Feel free to modify and resuse the app
@@ -109,7 +109,7 @@ class AboutDialog(QMessageBox):
 
 class EditDialog(QDialog):
     def __init__(self):
-        super().__int__()
+        super().__init__()
         self.setWindowTitle("Update Student Data")
         self.setFixedWidth(300)
         self.setFixedHeight(300)
