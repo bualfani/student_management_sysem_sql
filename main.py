@@ -1,5 +1,4 @@
-from PyQt6 import QtCore
-from PyQt6.QtWidgets import QApplication, QLabel, QWidget, QGridLayout, QLineEdit, QPushButton,\
+from PyQt6.QtWidgets import QApplication, QLabel, QGridLayout, QLineEdit, QPushButton,\
     QMainWindow, QTableWidget, QTableWidgetItem, QDialog, QVBoxLayout, QComboBox, QToolBar, QStatusBar, QMessageBox
 import sys
 from PyQt6.QtGui import QAction, QIcon
@@ -8,7 +7,7 @@ from PyQt6.QtCore import Qt
 
 
 class MainWindow(QMainWindow):
-    def __int__(self):
+    def __init__(self):
         super().__init__()
         self.setWindowTitle("Student Management System")
         self.setMinimumSize(800, 600)
@@ -100,7 +99,7 @@ class MainWindow(QMainWindow):
         dialog.exec()
 
 class AboutDialog(QMessageBox):
-    def __int__(self):
+    def __init__(self):
         super().__int__()
         self.setWindowTitle("About")
         content = """
@@ -109,7 +108,7 @@ class AboutDialog(QMessageBox):
         self.setText(content)
 
 class EditDialog(QDialog):
-    def __int__(self):
+    def __init__(self):
         super().__int__()
         self.setWindowTitle("Update Student Data")
         self.setFixedWidth(300)
@@ -164,8 +163,8 @@ class EditDialog(QDialog):
 
 
 class DeleteDialog(QDialog):
-    def __int__(self):
-        super().__int__()
+    def __init__(self):
+        super().__init__()
         self.setWindowTitle("Delete Student Data")
         self.setFixedWidth(300)
         self.setFixedHeight(300)
@@ -203,8 +202,8 @@ class DeleteDialog(QDialog):
 
 
 class InsertDialog(QDialog):
-    def __int__(self):
-        super().__int__()
+    def __init__(self):
+        super().__init__()
         self.setWindowTitle("Insert Student Data")
         self.setFixedWidth(300)
         self.setFixedHeight(300)
@@ -250,8 +249,8 @@ class InsertDialog(QDialog):
 
 
 class SearchDialog(QDialog):
-    def __int__(self):
-        super().__int__()
+    def __init__(self):
+        super().__init__()
         # Window title and size
         self.setWindowTitle("Search Student")
         self.setFixedWidth(3000)
